@@ -18,11 +18,16 @@ class PublishingHouse(models.Model):
     short_description = models.CharField(max_length=300, null=True)
     address = models.CharField(max_length=100, null=True)
 
+    def __str__(self):
+        return self.name
 
 class Category(models.Model):
     name = models.CharField(max_length=100)
     popularity = models.CharField(max_length=10, null=True)
     number_of_books = models.IntegerField(null=True)
+
+    def __str__(self):
+        return self.name
 
 
 class Book(models.Model):
